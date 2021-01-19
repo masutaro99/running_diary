@@ -41,7 +41,7 @@ gem 'rails-i18n'
 gem 'font-awesome-sass'
 gem 'rails_admin'
 gem 'cancancan'
-
+gem 'devise'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

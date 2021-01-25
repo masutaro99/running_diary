@@ -5,10 +5,6 @@ class CommentsController < ApplicationController
       flash[:notice] = "コメントを投稿しました"
       redirect_to comment.board
     else
-      redirect_to :back, flash: {
-        comment: comment,
-        error_messages: comment.errors.full_messages
-      }
       # Rails5.1以前はredirect_to :backだったが、rails5.2からredirect_backとなる、fallback_locationはHTTP_REFERERが設定されていない場合のリダイレクト先
       redirect_back fallback_location: root_path, flash: {
         comment: comment,

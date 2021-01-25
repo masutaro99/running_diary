@@ -9,6 +9,11 @@ class CommentsController < ApplicationController
         comment: comment,
         error_messages: comment.errors.full_messages
       }
+      # Rails5.1以前はredirect_to :backだったが、rails5.2からredirect_backとなる、fallback_locationはHTTP_REFERERが設定されていない場合のリダイレクト先
+      redirect_back fallback_location: root_path, flash: {
+        comment: comment,
+        error_messages: comment.errors.full_messages
+      }
     end
   end
 

@@ -24,4 +24,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  def age
+    now =Time.zone.now
+    return (now.strftime("%Y%m%d").to_i - birthday.strftime('%Y%m%d').to_i) / 10000
+  end
 end
